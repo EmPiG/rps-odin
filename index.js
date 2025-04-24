@@ -85,11 +85,23 @@ function playGame() {
     console.log(`Computer score is: ${computerScore}`);
   }
 
-  const humanSelection = getHumanChoice();
-  const compSelection = getComputerChoice();
+  
 
-  for (i = 0; i < 4; i++) {
-    playRound(humanSelection, compSelection) * i;
+  for (let i = 0; i < 5; i++) {
+    const humanSelection = getHumanChoice();
+    const compSelection = getComputerChoice();
+    playRound(humanSelection, compSelection);
+  }
+
+  console.log("Game over!");
+  console.log(`Final score - You: ${humanScore}, Computer: ${computerScore}`);
+  
+  if (humanScore > computerScore) {
+    console.log("Congratulations! You won the game!");
+  } else if (humanScore < computerScore) {
+    console.log("Sorry, you lost the game!");
+  } else {
+    console.log("The game ended in a draw!");
   }
 
 };
